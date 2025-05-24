@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //START GAME
     async function startGame() {
-        showError(''); // Clear previous errors
+        showError(''); 
         const questionsLoaded = await fetchQuestions();
         if (!questionsLoaded) return;
 
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         questionTextElement.innerText = question.question;
         if (!question.options || question.options.length === 0) {
             showError("Question format error: No options provided.");
-            // Skip to next question or end game if critical
+            
             if (currentQuestionIndex < shuffledQuestions.length - 1) {
                 currentQuestionIndex++;
                 setNextQuestion();
@@ -137,25 +137,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //RESET STATE
     function resetState() {
-        clearStatusClass(document.body); // Clear status from body if applied
+        clearStatusClass(document.body); 
         nextButton.classList.add('hide');
         feedbackContainer.textContent = '';
         feedbackContainer.className = 'feedback';
         while (answerButtonsElement.firstChild) {
             answerButtonsElement.removeChild(answerButtonsElement.firstChild);
         }
-        clearInterval(timer); // Clear previous timer
-        timeLeft = 60; // Reset timer for the new question
+        clearInterval(timer); 
+        timeLeft = 60; 
         timerElement.textContent = timeLeft;
     }
 
     //SELECT ANSWER
     function selectAnswer(selectedButton, selectedOption, correctAnswer) {
-        clearInterval(timer); // Stop timer on answer selection
+        clearInterval(timer); 
         const correct = selectedOption === correctAnswer;
 
         Array.from(answerButtonsElement.children).forEach(button => {
-            button.disabled = true; // Disable all buttons after an answer
+            button.disabled = true; 
             setStatusClass(button, button.innerText === correctAnswer);
         });
 
@@ -172,8 +172,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (shuffledQuestions.length > currentQuestionIndex + 1) {
             nextButton.classList.remove('hide');
         } else {
-            // No "Next" button if it's the last question, go directly to results
-            setTimeout(endGame, 1500); // Show feedback for a bit before ending
+            
+            setTimeout(endGame, 1500); 
         }
     }
 
@@ -210,8 +210,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 feedbackContainer.className = 'feedback wrong';
                 // Automatically move to next question or end game
                 Array.from(answerButtonsElement.children).forEach(button => {
-                    button.disabled = true; // Disable buttons
-                    // Optionally show correct answer when time is up
+                    button.disabled = true; 
+                    
                     if (button.innerText === shuffledQuestions[currentQuestionIndex].answer) {
                         setStatusClass(button, true);
                     }
@@ -230,14 +230,14 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(timer);
         questionContainerElement.classList.add('hide');
         nextButton.classList.add('hide');
-        controlsContainer.classList.add('hide'); // Hide next/start buttons container
+        controlsContainer.classList.add('hide'); 
         resultsContainer.classList.remove('hide');
         finalScoreElement.textContent = score;
-        quizHeader.classList.add('hide'); // Hide score/timer during results
-        playerNameInput.value = ''; // Clear previous name
+        quizHeader.classList.add('hide'); 
+        playerNameInput.value = ''; 
         feedbackContainer.textContent='';
         feedbackContainer.className='feedback';
-        loadLeaderboard(); // Show updated leaderboard
+        loadLeaderboard(); 
     }
 
     // Leaderboard
@@ -275,12 +275,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         leaderboard.push(newScoreEntry);
         leaderboard.sort((a, b) => b.score - a.score); // Sort descending by score
-        leaderboard.splice(MAX_LEADERBOARD_ENTRIES); // Keep only top N scores
+        leaderboard.splice(MAX_LEADERBOARD_ENTRIES); 
 
         try {
             localStorage.setItem(LEADERBOARD_KEY, JSON.stringify(leaderboard));
-            loadLeaderboard(); // Refresh the displayed leaderboard
-            saveScoreButton.disabled = true; // Prevent multiple saves for the same game
+            loadLeaderboard(); 
+            saveScoreButton.disabled = true; 
             playerNameInput.disabled = true;
             alert("Score saved!");
         } catch (e) {
