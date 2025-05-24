@@ -1,0 +1,225 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.quiz-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+}
+
+#quiz-header {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+#quiz-header h1 {
+    color: #333;
+    margin: 0 0 10px 0; /* Adjust margin for better spacing */
+    font-size: 2em;
+    width: 100%; /* Make h1 take full width initially */
+    text-align: center; /* Center the title */
+}
+
+#timer-container, #score-container {
+    font-size: 1.1em;
+    color: #555;
+    background-color: #e9ecef;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin: 5px; /* Add some margin around score and timer */
+}
+
+#question-container {
+    margin-bottom: 25px;
+}
+
+#question-text {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn.correct {
+    background-color: #28a745; /* Green for correct */
+}
+
+.btn.wrong {
+    background-color: #dc3545; /* Red for wrong */
+}
+
+.btn.correct:hover, .btn.wrong:hover {
+    background-color: #218838; /* Darker green */
+    background-color: #c82333; /* Darker red */
+}
+
+
+#controls-container {
+    margin-top: 20px;
+}
+
+.hide {
+    display: none !important; /* Use !important to ensure it overrides other display properties */
+}
+
+.feedback {
+    margin-top: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    min-height: 25px; /* Reserve space for feedback */
+}
+
+.feedback.correct {
+    color: #28a745;
+}
+
+.feedback.wrong {
+    color: #dc3545;
+}
+
+#results-container h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#results-container p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#leaderboard-container {
+    margin-top: 30px;
+    text-align: left;
+}
+
+#leaderboard-container h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#leaderboard-list {
+    list-style: none;
+    padding: 0;
+}
+
+#leaderboard-list li {
+    background-color: #f8f9fa;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1em;
+}
+
+#player-name {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    margin-right: 10px;
+    font-size: 1em;
+    margin-bottom: 10px; /* Add margin for smaller screens */
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .quiz-container {
+        padding: 20px;
+    }
+
+    #quiz-header h1 {
+        font-size: 1.8em;
+    }
+
+    #question-text {
+        font-size: 1.4em;
+    }
+
+    .btn {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+
+    .btn-grid {
+        grid-template-columns: 1fr; /* Stack buttons on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #quiz-header {
+        flex-direction: column; /* Stack header items */
+        align-items: center;
+    }
+    #quiz-header h1 {
+        font-size: 1.6em;
+        margin-bottom: 15px;
+    }
+    #timer-container, #score-container {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    #question-text {
+        font-size: 1.2em;
+    }
+
+    #player-name, #save-score-btn, #play-again-btn {
+        width: calc(100% - 22px); /* Adjust width for padding and border */
+        margin-bottom: 10px;
+    }
+    #save-score-btn{
+        margin-right: 0;
+    }
+}
