@@ -1,0 +1,62 @@
+[
+  {
+    "question": "What is the capital of France?",
+    "options": ["Berlin", "Madrid", "Paris", "Rome"],
+    "answer": "Paris",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which planet is known as the Red Planet?",
+    "options": ["Earth", "Mars", "Jupiter", "Saturn"],
+    "answer": "Mars",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Who wrote 'Romeo and Juliet'?",
+    "options": ["Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"],
+    "answer": "William Shakespeare",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What is the largest ocean on Earth?",
+    "options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+    "answer": "Pacific Ocean",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What is the chemical symbol for water?",
+    "options": ["O2", "H2O", "CO2", "NaCl"],
+    "answer": "H2O",
+    "difficulty": "easy"
+  },
+  {
+    "question": "In what year did World War II end?",
+    "options": ["1943", "1945", "1947", "1950"],
+    "answer": "1945",
+    "difficulty": "hard"
+  },
+  {
+  "question": "What gas do plants absorb from the atmosphere?",
+  "options": ["Oxygen", "Carbon Dioxide", "Hydrogen", "Nitrogen"],
+  "answer": "Carbon Dioxide",
+  "difficulty": "hard"
+},
+{
+  "question": "Which continent is the Sahara Desert located in?",
+  "options": ["Asia", "Australia", "Africa", "South America"],
+  "answer": "Africa",
+  "difficulty": "hard"
+},
+{
+  "question": "What is the largest organ in the human body?",
+  "options": ["Heart", "Liver", "Skin", "Lung"],
+  "answer": "Skin",
+  "difficulty": "medium"
+},
+{
+  "question": "Which instrument has keys, pedals, and strings?",
+  "options": ["Guitar", "Flute", "Piano", "Drum"],
+  "answer": "Piano",
+  "difficulty": "medium"
+}
+]

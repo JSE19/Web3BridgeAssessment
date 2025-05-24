@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSEA QUIZ GAME</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="quiz-header">
+            <h1>Awesome Quiz!</h1>
+            <div id="timer-container">Time Left: <span id="time">60</span>s</div>
+            <div id="score-container">Score: <span id="score">0</span></div>
+        </div>
+
+        <div id="question-container" class="hide">
+            <h2 id="question-text">Question text</h2>
+            <div id="answer-buttons" class="btn-grid">
+                </div>
+        </div>
+
+        <div id="controls-container">
+            <button id="start-btn" class="btn">Start Quiz</button>
+            <button id="next-btn" class="btn hide">Next Question</button>
+        </div>
+
+        <div id="results-container" class="hide">
+            <h2>Quiz Finished!</h2>
+            <p>Your final score is: <span id="final-score">0</span></p>
+            <div id="leaderboard-container">
+                <h3>Leaderboard</h3>
+                <ul id="leaderboard-list">
+                    </ul>
+            </div>
+            <input type="text" id="player-name" placeholder="Enter your name for leaderboard">
+            <button id="save-score-btn" class="btn">Save Score</button>
+            <button id="play-again-btn" class="btn">Play Again</button>
+        </div>
+
+        <div id="feedback-container" class="feedback"></div>
+        <div id="error-container" class="error-message hide"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
